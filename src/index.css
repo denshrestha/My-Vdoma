@@ -1,0 +1,88 @@
+@import url('./assets/font/stylesheet');
+
+@layer base {
+  * {
+    margin: 0;
+    font-family: 'TT Firs Neue', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+.active-clickable {
+    position: relative;
+}
+
+.active-clickable::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: 1s slidein;
+    background-color: #fddd0a38;
+    border: solid 4px #fddd0a00;
+    outline: 1px solid #fddd0a;
+    background-blend-mode: difference;
+    opacity: 0;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+}
+
+.main-activities {
+  background-image: url('../public/images/bg-element-red-bottom-left.svg'), url('../public/images/bg-element-red-top-right.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right
+}
+
+.help {
+  background-color: #FBFAFA;
+  background-image: url('../public/images/bg-element-white-bottom-right.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right
+}
+
+.values {
+  background-image: url('../public/images/bg-element-gray-top-left.svg'), url('../public/images/bg-element-gray-bottom-right.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right
+}
+
+.activities {
+  background-color: #FBFAFA;
+  background-image: url('../public/images/bg-element-red-top-left.svg'), url('../public/images/bg-element-red-bottom-right.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right
+}
+
+.contacts {
+  background-image: url('../public/images/bg-element-red-bottom-left-2.svg'), url('../public/images/bg-element-red-bottom-right-2.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, bottom right
+}
+
+@media screen and (max-width: 768px) {
+  .contacts {
+    background-image: url('../public/images/bg-element-red-bottom-right-2.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right
+  }
+}
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
